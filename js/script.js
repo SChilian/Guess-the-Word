@@ -1,6 +1,6 @@
 const playerGuessedLetters = document.querySelector(".guessed-letters");
 const guessButton = document.querySelector(".guess");
-const input = document.querySelector("input");
+const input = document.querySelector(".letter");
 const inProgress = document.querySelector(".word-in-progress");
 const remainingGuesses = document.querySelector(".remaining");
 const span = document.querySelector("span");
@@ -29,11 +29,10 @@ const letterSymbol = function (word) {
         
         const guessInput = input.value;
         //console.log(guessInput);
-        input.value = "";
         message.innerText="";
         const check = inputValidation(guessInput);
-        makeGuess(guessInput);
-    
+        makeGuess(guessInput); 
+        input.value ="";
         
     });
 
@@ -57,12 +56,43 @@ const letterSymbol = function (word) {
             } else {
                 guessedLetters.push(guessInput);
                 console.log (guessedLetters);
-        
-                
+                showLetters();
+                wordInProgress(guessedLetters)
             }
-        
     };
 
-    
+    const showLetters = function () {
+        playerGuessedLetters.innerHTML = "";
+        for ( const letter of guessedLetters) {
+          const li = document.createElement("li");
+          li.innerText = letter; 
+          playerGuessedLetters.append(li);
+        }
+    };
 
 
+    const wordInProgress = function (guessedLetters) {
+        const wordUpper = word.toUpperCase();
+        const wordArray = wordUpper.split("");
+        const updatedLetter = [];
+       for (const letter of wordArray) {
+           if (guessedLetters.includes(letter)) {
+            updatedLetter.push(letter.toUpperCase());
+          } else {
+              updatedLetter.push("●");
+               //console.log(updatedLetter)
+                inProgress.innerText = updatedLetter.join("");
+          }
+        }
+        guessedCorrectly();
+    };
+
+    const guessedCorrectly = function () {
+        if (word.toUpperCase() === inProgress.innerText) {
+            message.classList.add("win");
+            message.innerText = `<p class="highlight">You guessed correct the word! Congrats!</p>`;
+        }
+}
+
+   
+//console.log(makeGuess("l"));
