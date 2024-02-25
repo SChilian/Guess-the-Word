@@ -48,7 +48,11 @@ guessButton.addEventListener("click", function (e) {
     //console.log(guessInput);
     message.innerText = "";
     const check = inputValidation(guessInput);
+
+    if (check) {
     makeGuess(guessInput);
+    }
+    
     input.value = "";
 
 });
