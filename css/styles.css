@@ -36,9 +36,9 @@ h1 {
 }
 
 .container {
-  background: radial-gradient(50% 50% at 50% 50%,
+  /*background: radial-gradient(50% 50% at 50% 50%,
     rgba(167, 237, 237, 0.3) 0%,
-    rgba(156, 226, 226, 0) 100%);
+    rgba(156, 226, 226, 0) 100%);*/
   display: flex;
   justify-content: center;
   flex-direction: column;

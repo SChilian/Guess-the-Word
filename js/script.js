@@ -9,7 +9,7 @@ const hiddenButton = document.querySelector(".play-again")
 
 let word = "magnolia";
 let guessedLetters = [];
-let remainingGameGuesses = 8;
+let remainingGameGuesses = 10;
 
 const grabWord = async function () {
     const response = await fetch( 
@@ -151,7 +151,7 @@ const startOver = function () {
 hiddenButton.addEventListener("click", function() {
     message.classList.remove("win");
     message.innerText = "";
-    remainingGameGuesses = 8;
+    remainingGameGuesses = 10;
     guessedLetters = [];
     span.innerText = `${remainingGameGuesses} guesses`
     playerGuessedLetters.innerText = "";
