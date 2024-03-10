@@ -70,6 +70,8 @@ h1 {
 .remaining {
   display: inline-block;
   background-color: #28bdbd;
+  padding: 20px 60px;
+  border-radius: 50px;
   
 }
 
