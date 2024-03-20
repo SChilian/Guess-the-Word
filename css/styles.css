@@ -12,7 +12,7 @@ body {
   font-size: 20px;
   line-height: 150%;
   background-color: #d2b48c;
-  background-image: url("../img/question-marks-2-min.jpg");
+  background-image: url("../img/background-img-4.jpg");
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -63,7 +63,7 @@ h1 {
 
 .word-in-progress {
   letter-spacing: 15px;
-  color:#10e4e4;
+  color: black;
   font-size: 30px;
 }
 
